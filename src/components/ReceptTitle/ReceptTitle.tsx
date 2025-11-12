@@ -2,13 +2,15 @@ import type { ReceptT } from '../../data/recepts'
 import './ReceptTitle.css'
 
 type ReceptTitleProps = {
-    name: ReceptT['title']
+    name: ReceptT['title'];
+    isSelected: boolean;
 }
 
-function ReceptTitle({ name }: ReceptTitleProps) {
+function ReceptTitle({ name, isSelected }: ReceptTitleProps) {
+    const classNames = ['receptTitle-container', (isSelected ? 'receptTitle-container_active' : null)] // 'receptTitle-container receptTitle-container_active'
 
     return (
-        <div className='receptTitle-container'>
+        <div className={classNames.join(' ')}>
             {name}
         </div>
     )

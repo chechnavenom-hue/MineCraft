@@ -66,6 +66,6 @@
   transition: background-color 0.3s ease;
 }
 
-::-webkit-scrollbar-thumb:hover {
+/* ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, rgb(239, 157, 6), 107, 107), 107, 107), 107, 107), 107, 107), #333333);
-}
+} */
