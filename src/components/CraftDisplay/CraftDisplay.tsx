@@ -1,11 +1,16 @@
 import type { ReceptT } from '../../data/recepts'
 import './CraftDisplay.css'
-
+import ProgresBar from '../ProgressBar/ProgresBar'
+import { useState } from 'react'
 type CraftDisplayProps = {
     recept: ReceptT
 }
 
 function CraftDisplay({ recept }: CraftDisplayProps) {
+    const [progresStart, setProgresStart] = useState(false)
+
+    const startFn = () => setProgresStart(true)
+    const stopFn = () => setProgresStart(false)
 
     const materialsdiv = recept.rawMaterials.map((materials) => (
         <div key={materials.id} className='material-container'>
@@ -26,8 +31,8 @@ function CraftDisplay({ recept }: CraftDisplayProps) {
                 <div>Требование к крафту</div>
                 <div className='materials-container'>{materialsdiv}</div>
             </div>
-
-            <div className='btn-start'>Начать</div>
+            <div className='superMainBar-container'><ProgresBar isLoading={progresStart} stopFn={stopFn} /></div>
+            <div className='btn-start' onClick={startFn}>Начать</div>
         </div>
     )
 }

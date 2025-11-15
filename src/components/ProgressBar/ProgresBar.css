@@ -1,0 +1,11 @@
+.mainBar-container {
+    width: 100%;
+    background: #e4c7c7;
+}
+
+.intoBar-container {
+    height: 20px;
+    background: #76b852;
+    width: 0;
+    transition: width 0.1s linear;
+}
